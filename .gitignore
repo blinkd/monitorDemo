@@ -1,0 +1,10 @@
+.idea
+
+*.pyc
+
+
+data/*.txt
+
+*.txt
+
+__pycache__/
