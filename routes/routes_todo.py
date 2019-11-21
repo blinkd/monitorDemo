@@ -2,7 +2,7 @@ from flask import (
     Blueprint,
     render_template,
 )
-
+from models.todo import Todo
 from routes import (
     login_required,
 )
@@ -16,4 +16,7 @@ def index():
     """
     主页的处理函数, 返回主页的响应
     """
-    return render_template('todo_index.html')
+    todos = Todo.all_json()
+
+    return render_template('todo_index_render.html', todos = todos)
+
