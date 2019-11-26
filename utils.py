@@ -1,6 +1,6 @@
 import time
 from datetime import datetime
-
+import logging
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -14,6 +14,11 @@ def log(*args, **kwargs):
     # a append 追加模式
     with open('log.txt', 'a', encoding='utf-8') as f:
         print(dt, *args, file=f, **kwargs)
+
+
+def logger():
+    logger = logging.getLogger('simple_example')
+    logger.setLevel(logging.DEBUG)
 
 
 # 得到用于加载模板的目录

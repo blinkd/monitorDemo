@@ -8,7 +8,8 @@ from routes.routes_static import static_view
 from routes.routes_todo import todo_view
 from routes.api_todo import todo_api
 from job.jobs import *
-
+import logging
+import logging.config
 
 app = Flask(__name__)
 app.register_blueprint(user_view)

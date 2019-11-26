@@ -18,7 +18,7 @@ scheduler = APScheduler()
 
 
 # cron examples
-@scheduler.task('cron', id='do_job_2', minute='*/2')
+@scheduler.task('cron', id='do_job_2', minute='*/59')
 def job2():
     log('Job 2 executed')
     to_addr = "zhengchen@wayyue.com"

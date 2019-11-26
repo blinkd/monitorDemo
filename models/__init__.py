@@ -162,6 +162,7 @@ class Model(object):
 
     @classmethod
     def delete(cls, id):
+        id = int(id)
         models = cls.all()
         index = -1
         for i, e in enumerate(models):
