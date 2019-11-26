@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+MyIndex
+{% endblock %}
+
+{% block body %}
+
+        <div class="htmleaf-header">
+            <h1>精美的多级侧边栏导航菜单<span>菜单图标可以自由设置</span></h1>
+
+            <div class="header pure-form">
+                    <h1>TODO LIST</h1>
+                <form action="/todo/add" method="post">
+                    <input id='id-input-todo' name = "task">
+                    <button id='id-button-add' type="submit" >add</button>
+                </form>
+            </div>
+
+            <div class="content">
+                    <div class="todo-list">
+                        {% for t in todos %}
+                        <div class="todo-cell">
+                                <a href="/todo/edit?id={{t.id}}">编辑</a>
+                                <a href="/todo/delete?id={{t.id}}">删除</a>
+                                <span class="todo-task">{{t.task}}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
+        </div>
+
+{% endblock %}
+
